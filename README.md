@@ -28,6 +28,16 @@ Run the following command on your CLI to run the application:
 
 Then navigate to insomia or localhost:3001 to test the api routes.
 
+
+
+https://user-images.githubusercontent.com/65073138/149596910-549906a6-386b-45fd-bbd2-e69cc0bc8fa8.mov
+
+
+
+https://user-images.githubusercontent.com/65073138/149596923-1143cc71-112d-4f55-95a6-0c3dd7d06abd.mov
+
+
+
 ## Packages
 
 * [Express.js ](https://www.npmjs.com/package/express)
