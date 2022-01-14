@@ -1,9 +1,9 @@
-const { Thoughts, User } = require("../models");
+const { Thought, User } = require("../models");
 
 const thoughtController = {
   // GET all thoughts
   getAllThoughts(req, res) {
-    Thoughts.find({})
+    Thought.find({})
       .populate({
         path: "thoughts",
       })
@@ -15,7 +15,7 @@ const thoughtController = {
   },
   //   GET single thought by _id
   getThoughtById({ params }, res) {
-    Thoughts.findOne({ _id: params.thoughtId })
+    Thought.findOne({ _id: params.thoughtId })
       .populate({
         path: "thoughts",
       })
@@ -32,7 +32,7 @@ const thoughtController = {
   },
   //   POST to create new thought
   addThought({ params, body }, res) {
-    Thoughts.create(body)
+    Thought.create(body)
       .then(({ _id }) => {
         console.log(_id);
         return User.findOneAndUpdate(
@@ -55,7 +55,7 @@ const thoughtController = {
   updateThought({ params, body }, res) {
     console.log(params.thoughtId);
     console.log(body);
-    Thoughts.findOneAndUpdate({ _id: params.thoughtId }, body, {
+    Thought.findOneAndUpdate({ _id: params.thoughtId }, body, {
       new: true,
       runValidators: true,
     })
@@ -71,7 +71,7 @@ const thoughtController = {
 
   // DELETE to remove thought by _id
   removeThought({ params }, res) {
-    Thoughts.findOneAndDelete({ _id: params.thoughtId })
+    Thought.findOneAndDelete({ _id: params.thoughtId })
       .then((deletedThought) => {
         if (!deletedThought) {
           return res.status(404).json({ message: "No thought with this id!" });
@@ -93,7 +93,7 @@ const thoughtController = {
   },
   //   POST to create reaction
   addReaction({ params, body }, res) {
-    Thoughts.findOneAndUpdate(
+    Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       { $push: { reactions: body } },
       { new: true, runValidators: true }
@@ -109,7 +109,7 @@ const thoughtController = {
   },
   // DELETE to pull and remove reaction by reaction's reactionId
   removeReaction({ params }, res) {
-    Thoughts.findOneAndUpdate(
+    Thought.findOneAndUpdate(
       { _id: params.thoughtId },
       // remove specific reply from replies array
       // where replyId matches value of params.replyId passed in from route
