@@ -28,11 +28,14 @@ Run the following command on your CLI to run the application:
 
 Then navigate to insomia or localhost:3001 to test the api routes.
 
+The following animation shows GET routes to return all users and all thoughts being tested in Insomnia:
+
 
 
 https://user-images.githubusercontent.com/65073138/149596910-549906a6-386b-45fd-bbd2-e69cc0bc8fa8.mov
 
 
+The following animation shows GET routes to return a single user and a single thought being tested in Insomnia
 
 https://user-images.githubusercontent.com/65073138/149596923-1143cc71-112d-4f55-95a6-0c3dd7d06abd.mov
 
