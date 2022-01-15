@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+//require all function from the controllers
 const {
     getAllUsers, getUserById, createUser, updateUser, deleteUser, addFriend, removeFriend
 } = require("../../controllers/user-controller");

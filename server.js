@@ -1,7 +1,9 @@
+//require the express and mongoose package
 const express = require('express');
 const mongoose = require('mongoose');
-
+//declare the application
 const app = express();
+//declare the port connection
 const PORT = process.env.PORT || 3001;
 
 app.use(express.json());

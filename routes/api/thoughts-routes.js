@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+//require all function from controllers
 const { getAllThoughts, getThoughtById, addThought, updateThought, removeThought, addReaction, removeReaction } = require("../../controllers/thoughts-controller");
 
 // /api/thoughts/
